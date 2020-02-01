@@ -51,7 +51,7 @@ module.exports = function(ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ["Dialog", "LocalStorage", "Notify"]
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -62,7 +62,7 @@ module.exports = function(ctx) {
       scopeHoisting: true,
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       showProgress: true,
-      gzip: false,
+      gzip: true,
       analyze: false,
       // Options below are automatically set depending on the env, set them if you want to override
       // preloadChunks: false,
