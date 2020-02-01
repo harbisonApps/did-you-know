@@ -1,7 +1,8 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-module.exports = function (ctx) {
+// eslint-disable-next-line no-undef
+module.exports = function(ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
@@ -42,7 +43,11 @@ module.exports = function (ctx) {
       //            (not treeshaking Quasar; biggest bundle size; convenient)
       all: 'auto',
 
-      components: [],
+      components: [
+        'QTabs',
+        'QTab',
+        'QRouteTab'
+      ],
       directives: [],
 
       // Quasar plugins
