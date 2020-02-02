@@ -10,12 +10,11 @@
           icon="menu"
           aria-label="Menu"
         />
-
         <q-toolbar-title class="absolute-center">
           Did You Know
         </q-toolbar-title>
-
-        <div>v {{ appVersion }}</div>
+        <q-btn v-if="!loggedIn" flat to="/auth" class="absolute-right" icon-right="account_circle" label="login" />
+        <q-btn @click="logoutUser" v-else flat class="absolute-right" label="logout" />
       </q-toolbar>
     </q-header>
 
@@ -26,7 +25,7 @@
       content-class="bg-teal-3 text-black"
     >
       <q-list>
-        <q-item-label header>Links</q-item-label>
+        <q-item-label header> Version {{ appVersion }}</q-item-label>
           <q-item
           v-for="nav in navs"
           :key="nav.label"
@@ -72,7 +71,6 @@ export default {
       leftDrawerOpen: false,
       appVersion: "0.1.0",
       navs: [
-        { to: "/", icon: "account_box", label: "Login" },
         { to: "/home", icon: "home", label: "Home" },
         { to: "/random", icon: "autorenew", label: "random Fact" },
         { to: "/about", icon: "info", label: "About" }
