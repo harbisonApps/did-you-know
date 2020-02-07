@@ -1,6 +1,10 @@
 <template>
   <q-page padding>
     <h5>About This App</h5>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur optio libero adipisci, 
+		sed officiis ad pariatur expedita blanditiis dolor autem tempore iure eveniet, harum 
+		suscipit hic illo quam assumenda! Distinctio.
+	</p>
     <q-list bordered padding>
 		  <q-item-label header>More</q-item-label>
 

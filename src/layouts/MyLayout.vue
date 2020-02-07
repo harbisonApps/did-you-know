@@ -13,7 +13,7 @@
         <q-toolbar-title class="absolute-center">
           Did You Know
         </q-toolbar-title>
-        <q-btn v-if="!loggedIn" flat to="/auth" class="absolute-right" icon-right="account_circle" label="login" />
+        <q-btn v-if="!loggedIn" flat to="/" class="absolute-right" icon-right="account_circle" label="login" />
         <q-btn @click="logoutUser" v-else flat class="absolute-right" label="logout" />
       </q-toolbar>
     </q-header>
@@ -21,11 +21,13 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
+      :width="180"
+      :breakpoint="1024"
       bordered
       content-class="bg-teal-3 text-black"
     >
       <q-list>
-        <q-item-label header> Version {{ appVersion }}</q-item-label>
+        <q-item-label header class="text-white"> Version <span class="text-weight-bold">{{ appVersion }}</span></q-item-label>
           <q-item
           v-for="nav in navs"
           :key="nav.label"
@@ -72,7 +74,7 @@ export default {
       appVersion: "0.1.0",
       navs: [
         { to: "/home", icon: "home", label: "Home" },
-        { to: "/random", icon: "autorenew", label: "random Fact" },
+        { to: "/random", icon: "autorenew", label: "Random Fact" },
         { to: "/about", icon: "info", label: "About" }
       ]
     };
