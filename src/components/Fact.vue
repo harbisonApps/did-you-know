@@ -24,8 +24,8 @@
       <span class="p" v-if="fact.description">{{ fact.description }}</span>
       <p v-else>No description provided.</p>
     </q-card-section>
-
-    <!-- <q-card-actions
+	<br>
+    <q-card-actions
     	class="absolute-bottom"
     	align="right">
       <q-btn
@@ -38,7 +38,7 @@
       	icon="delete"
       	color="red"
       	flat>Delete</q-btn>
-    </q-card-actions> -->
+    </q-card-actions>
 
     <q-dialog 
     	v-model="showEditFactModal">
@@ -63,8 +63,8 @@ export default {
 	.card {
         /* margin-left: 50px; */
 		min-height: 400px;
-		max-width: 300px;
-		width: 300px;
+		max-width: 295px;
+		width: 295px;
 		transition: background 0.3s;
 	}
 	.card-clickable {

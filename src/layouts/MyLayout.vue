@@ -21,8 +21,8 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      :width="180"
-      :breakpoint="1024"
+      :width="190"
+      :breakpoint="1025"
       bordered
       content-class="bg-teal-3 text-black"
     >
@@ -41,6 +41,14 @@
           </q-item-section>
           <q-item-section>
             <q-item-label>{{ nav.label }}</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item exact class="text-black" clickable to="accessibility">
+          <q-item-section avatar>
+            <q-icon name="accessibility_new"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Accessibility</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
