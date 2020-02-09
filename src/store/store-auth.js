@@ -17,7 +17,7 @@ const actions = {
         //Loading.show()
         firebaseAuth.createUserWithEmailAndPassword(payload.email, payload.password)
             .then(res => {
-                console.log('success', res)
+                console.log('success')
             })
             .catch(err => {
                 Loading.hide();
@@ -28,7 +28,7 @@ const actions = {
         //Loading.show()
         firebaseAuth.signInWithEmailAndPassword(payload.email, payload.password)
             .then(res => {
-                console.log('success', res)
+                console.log('success')
             })
             .catch(err => {
                 Loading.hide();

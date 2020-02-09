@@ -35,7 +35,8 @@ export default {
         }
     },
     methods: {
-        ...mapActions('auth', ['registerUser', 'loginUser']),
+        //...mapActions('auth', ['registerUser', 'loginUser']),
+        ...mapActions('auth', [ 'loginUser']),
 
         isVaildEmail(email){
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -48,9 +49,9 @@ export default {
                  if (this.tab =='login') {
                      this.loginUser(this.formData)
                  }
-                 else {
-                     this.registerUser(this.formData)
-                 }
+                //  else {
+                //      this.registerUser(this.formData)
+                //  }
                  
              }
         }
