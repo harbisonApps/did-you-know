@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import facts from "./store-facts"
+import auth from "./store-auth"
 
 // import example from './module-example'
 
@@ -18,7 +19,7 @@ Vue.use(Vuex);
 export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      facts
+      facts, auth
     },
 
     // enable strict mode (adds overhead!)

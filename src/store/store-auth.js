@@ -46,13 +46,13 @@ const actions = {
                 Loading.hide();
                 commit('setLoggedIn', true)
                 LocalStorage.set('loggedIn', true)
-                this.$router.push("/home")
+                this.$router.push("/")
                 dispatch("facts/fbReadData", null, { root: true })
                     .catch(err => {
                         console.log(err)
                     });
             } else {
-                commit("facts/clearTasks", null, { root: true });
+                commit("facts/clearFacts", null, { root: true });
                 commit("facts/setFactsDownloaded", false, { root: true })
                 commit("setLoggedIn", false)
                 LocalStorage.set("loggedIn", false);

@@ -1,7 +1,16 @@
 <template>
   <q-page padding>
-    <h1 class="h1">Did You Know ???</h1>
-    <div class="row q-gutter-lg justify-evenly">
+    <div class="row justify-center q-mb-md">
+      <q-img 
+        src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/04/1492025578APIB-01.png"
+        :ratio="16/9"
+        style="max-width: 650px;"
+        contain
+      >
+        <h2 class="absolute-middle text-white text-center">Did You Know ???</h2>
+      </q-img>
+    </div>
+    <div class="row q-gutter-lg justify-center">
     <Fact
       v-for="fact in facts"
 				:key="fact.id"
@@ -24,7 +33,5 @@ export default {
 </script>
 
 <style scoped>
-  .h1{
-    font-size: 2rem
-  }
+  
 </style>

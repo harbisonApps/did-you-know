@@ -40,13 +40,13 @@
       	flat>Delete</q-btn>
     </q-card-actions>
 
-    <q-dialog 
+    <!-- <q-dialog 
     	v-model="showEditFactModal">
       <modal-add-edit-fact 
       	type="edit"
       	:fact="fact"
       	@close="showEditFactModal = false" />
-    </q-dialog>
+    </q-dialog> -->
 
   </q-card>
 </template>
