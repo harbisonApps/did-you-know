@@ -1,0 +1,47 @@
+{
+  "tasks" : {
+    "AZv3BEOlnTTmZxp17DTVbLdbmc42" : {
+      "751dc326-9c8c-1cab-61b5-4e7c12b9390b" : {
+        "completed" : false,
+        "details" : "",
+        "dueDate" : "",
+        "dueTime" : "",
+        "name" : "alsjdawd"
+      }
+    },
+    "MPS7pPsxzafPbXn9WIRbR7KNR882" : {
+      "ba01fa35-f9b5-2b0b-54fe-77f88a7ab5cb" : {
+        "completed" : false,
+        "details" : "as;kjcsa",
+        "dueDate" : "",
+        "dueTime" : "",
+        "name" : "sdvmsdvs"
+      }
+    },
+    "aaQvoo8WdbR3mdiSGRBT4cve7QY2" : {
+      "f3164709-158b-b7e6-aca2-adcc60f56dfe" : {
+        "completed" : true,
+        "details" : "",
+        "dueDate" : "",
+        "dueTime" : "",
+        "name" : "change user clear tasks"
+      }
+    },
+    "lWJkguYta5fULsqluDTsIGVMQWB3" : {
+      "id1" : {
+        "completed" : false,
+        "details" : "Some details",
+        "dueDate" : "1/30/2020",
+        "dueTime" : "11:00",
+        "name" : "Go to store"
+      },
+      "id2" : {
+        "completed" : false,
+        "details" : "Some details sdlfhh",
+        "dueDate" : "1/31/2020",
+        "dueTime" : "15:30",
+        "name" : "Let the dog out"
+      }
+    }
+  }
+}

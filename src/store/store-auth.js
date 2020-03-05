@@ -25,7 +25,7 @@ const actions = {
             })
     },
     loginUser({ }, payload) {
-        //Loading.show()
+        Loading.show()
         firebaseAuth.signInWithEmailAndPassword(payload.email, payload.password)
             .then(res => {
                 console.log('success')
@@ -46,7 +46,7 @@ const actions = {
                 Loading.hide();
                 commit('setLoggedIn', true)
                 LocalStorage.set('loggedIn', true)
-                this.$router.push("/")
+                this.$router.push("/admin")
                 dispatch("facts/fbReadData", null, { root: true })
                     .catch(err => {
                         console.log(err)

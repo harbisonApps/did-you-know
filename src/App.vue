@@ -21,11 +21,11 @@ export default {
     font-size: 15px;
     text-indent: 8px;
   }
-  h2{
+  h1{
 	font-size: 2rem;
   line-height: 2rem;
 }
-h3{
+h2{
 	font-size: 1.5rem;
   line-height: 1.8rem;
 }

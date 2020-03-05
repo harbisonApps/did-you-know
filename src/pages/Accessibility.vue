@@ -1,12 +1,13 @@
 <template>
     <q-page class="q-px-md">
-        <h2>Accessibility Statement</h2>
+		<q-btn color="secondary" name="Go back to about" class="q-mt-md text-black" style="width:200px;" to="/about" label="Go back" />
+        <h1>Accessibility Statement</h1>
 <p> <span class="basic-information text-weight-bold website-name">Did You Know</span> and 
 	<span class="basic-information text-weight-bold organization-name">Harbison Apps</span>
 	is committed to ensuring digital accessibility for people with disabilities.
 	We are continually improving the user experience for everyone, and applying the relevant accessibility standards.
 </p>
-<h3>Measures to support accessibility</h3>
+<h2>Measures to support accessibility</h2>
 <p> 
 	<span class="basic-information text-weight-bold website-name">Did You Know</span> and
 	<span class="basic-information text-weight-bold organization-name"> Harbison Apps</span>
@@ -20,7 +21,7 @@
 	<li>Assign clear accessibility targets and responsibilities.</li>
 	<li>Employ formal accessibility quality assurance methods.</li>
 </ul>
-<h3>Conformance status</h3>
+<h2>Conformance status</h2>
 <p>
 	The <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.
 	<span class="basic-information text-weight-bold website-name">Did You Know</span>
@@ -34,7 +35,7 @@
 	<span class="basic-information conformance-meaning">some parts of the content do not fully conform to the accessibility standard</span>.
 </span>
 </p>
-<h3>Feedback</h3>
+<h2>Feedback</h2>
 <p>
 	We welcome your feedback on the accessibility of
 	<span class="basic-information text-weight-bold website-name">Did You Know</span>.
@@ -49,7 +50,7 @@
 <p>
 	We try to respond to feedback within <span class="feedback responsetime">1-2 business days</span>.
 </p>
-<h3>Technical specifications</h3>
+<h2>Technical specifications</h2>
 <p>
 	Accessibility of
 	<span class="basic-information text-weight-bold website-name">Did You Know</span>
@@ -62,7 +63,7 @@
 	<li>JavaScript</li>
 </ul>
 <p>These technologies are relied upon for conformance with the accessibility standards used.</p>
-<h3>Assessment approach</h3>
+<h2>Assessment approach</h2>
 <p>
 	<span class="basic-information text-weight-bold organization-name">Harbison Apps</span>
 	assessed the accessibility of

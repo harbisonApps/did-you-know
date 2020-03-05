@@ -1,7 +1,10 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import { uid, Notify } from 'quasar'
 import { firebaseDb, firebaseAuth } from '../boot/firebase'
 import { showErrorMessage } from '../functions/error-message'
+
+Vue.use(Vuex)
 
 const state = {
     facts: {
@@ -32,10 +35,12 @@ const mutations = {
 	},
 	updateFact(state, payload) {
 		// -TODO: Remove consolelog
-		//console.log('from mutaion payload:', payload);
-		Object.assign(state.facts[payload.id], payload.updates);
+		console.log('from mutaion payload:', payload.slug);
+		Object.assign(state.facts[payload.slug], payload.updates);
+		// let index = state.facts.findIndex(stateFact => stateFact.slug == fact.slug)
+		// Vue.set(state.facts, index, fact)
 	},
-	deletefact(state, id) {
+	deleteFact(state, id) {
 		// -TODO: Remove consolelog
 		console.log('delete id:', id);
 		Vue.delete(state.facts, id);
@@ -55,31 +60,63 @@ const mutations = {
 }
 
 const actions = {
-	addFact({ dispatch }, task) {
-		let taskId = uid();
-		let payload = {
-			id: taskId,
-			task
-		};
-		dispatch("fbAddTask", payload);
-	},
-	fbAddFact({ }, payload) {
-		//console.log(payload)
-		//let currentUser = firebaseAuth.currentUser.uid;
-		let factRef = firebaseDb.ref('facts/' + payload.id);
-		factRef.set(payload.fact, err => {
-			if (err) {
-				showErrorMessage(err.message)
-			} else {
+	createFact({ commit }, fact) {
+		let factId = uid()
+		fact.id = factId
+		fact = {
+			name: fact.name,
+			slug: fact.slug,
+			description: fact.description,
+			fullText: fact.fullText,
+			imageUrl: fact.imageUrl,
+		}
+		firebaseDb.ref('facts').push(fact)
+			.then(() => {
+				
+				commit('addFact', {
+					...fact
+				})
+			})
+			.then(() => {
 				Notify.create({
 					color: "primary",
 					message: "Fact created",
 					position: "center",
 					timeout: 500
 				});
-			}
-		})
+			})
+			.catch((err) => {
+				console.log(err)
+				showErrorMessage(err.message)
+			})
+
+		// Reach out to firebase and store it
 	},
+	// addFact({ dispatch }, fact) {
+	// 	let factId = uid();
+	// 	let payload = {
+	// 		id: factId,
+	// 		fact
+	// 	};
+	// 	dispatch("fbAddFact", payload);
+	// },
+	// fbAddFact({ }, payload) {
+	// 	//console.log(payload)
+	// 	//let currentUser = firebaseAuth.currentUser.uid;
+	// 	let factRef = firebaseDb.ref('facts/' + payload.id);
+	// 	factRef.set(payload.fact, err => {
+	// 		if (err) {
+	// 			showErrorMessage(err.message)
+	// 		} else {
+	// 			Notify.create({
+	// 				color: "primary",
+	// 				message: "Fact created",
+	// 				position: "center",
+	// 				timeout: 500
+	// 			});
+	// 		}
+	// 	})
+	// },
 	updateFact({ dispatch }, payload) {
     	dispatch("fbUpdateFact", payload);
   },
@@ -94,7 +131,7 @@ const actions = {
 				if (!(keys.includes('completed') && keys.length == 1)) {
 					Notify.create({
 						color: "green",
-						message: "Task updated",
+						message: "Fact updated",
 						position: "center",
 						timeout: 200
 					});
@@ -134,9 +171,9 @@ const actions = {
 		})
 		// update on create method
 		facts.on("child_added", snapshot => {
-			// console.log('snapshot:', snapshot)
+			console.log('child_ added - snapshot:', snapshot.key)
 			let fact = snapshot.val();
-			console.log("fact", fact);
+			console.log("fact:", fact.slug);
 			let payload = {
 				id: snapshot.key,
 				fact: fact
@@ -147,7 +184,7 @@ const actions = {
 		facts.on("child_changed", snapshot => {
 			// console.log('snapshot:', snapshot)
 			let task = snapshot.val();
-			console.log("fact", fact);
+			console.log("fact", fact.slug);
 			let payload = {
 				id: snapshot.key,
 				updates: fact
@@ -166,7 +203,14 @@ const actions = {
 const getters = {
     facts: (state) => {
         return state.facts
-    }
+	},
+	loadFact: (state) => {
+		return (slug) => {
+			return state.facts.find((payload) => {
+				return payload.slug === slug
+			})
+		}
+	}
 }
 export default {
     namespaced: true,

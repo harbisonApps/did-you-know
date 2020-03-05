@@ -63,7 +63,7 @@ module.exports = function(ctx) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       showProgress: true,
       gzip: true,
       analyze: false,
@@ -104,7 +104,15 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
-      workboxOptions: {}, // only for GenerateSW
+      workboxOptions: {
+        skipWaiting: true,
+        clientsClaim: true,
+        runtimeCaching: [{
+          urlPattern: new RegExp('https://did-you-knowthis.web.app'),
+          handler: 'StaleWhileRevalidate'
+        }]
+      
+      }, // only for GenerateSW
       manifest: {
         name: 'Did You Know',
         short_name: 'Did You Know',

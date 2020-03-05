@@ -24,10 +24,11 @@
       :width="190"
       :breakpoint="1025"
       bordered
-      content-class="bg-teal-3 text-black"
+      
+      content-class="bg-secondary text-black"
     >
       <q-list>
-        <q-item-label header class="text-white"> Version <span class="text-weight-bold">{{ appVersion }}</span></q-item-label>
+        <q-item-label header class="text-black"> Version <span class="text-weight-bold">{{ appVersion }}</span></q-item-label>
           <q-item
           v-for="nav in navs"
           :key="nav.label"
@@ -83,7 +84,7 @@ export default {
       leftDrawerOpen: false,
       appVersion: "0.1.0",
       navs: [
-        { to: "/home", icon: "home", label: "Home" },
+        { to: "/", icon: "home", label: "Home" },
         { to: "/random", icon: "autorenew", label: "Random Fact" },
         { to: "/about", icon: "info", label: "About" }
       ]
