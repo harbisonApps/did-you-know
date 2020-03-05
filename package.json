@@ -15,17 +15,9 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@quasar/extras": "^1.5.1",
-    "firebase": "^7.8.1",
-    "quasar": "^1.8.5",
-    "slugify": "^1.3.6",
-    "vue-suglify": "^1.0.14"
-=======
     "@quasar/extras": "^1.5.2",
     "firebase": "^7.9.3",
     "quasar": "^1.9.4"
->>>>>>> 9ac68875be57d0696229ccac1a18337cd6f6ced1
   },
   "devDependencies": {
     "@quasar/app": "^1.6.0",
