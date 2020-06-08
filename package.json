@@ -15,7 +15,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.8.1",
+    "@quasar/extras": "^1.8.2",
     "firebase": "^7.14.5",
     "quasar": "^1.11.3",
     "slugify": "^1.4.0",
