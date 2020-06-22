@@ -17,7 +17,7 @@
   "dependencies": {
     "@quasar/extras": "^1.8.2",
     "firebase": "^7.14.5",
-    "quasar": "^1.12.4",
+    "quasar": "^1.12.7",
     "slugify": "^1.4.0",
     "vue-suglify": "^1.0.14"
   },
