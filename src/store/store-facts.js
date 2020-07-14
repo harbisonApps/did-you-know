@@ -35,7 +35,7 @@ const mutations = {
 	},
 	updateFact(state, payload) {
 		// -TODO: Remove consolelog
-		console.log('from mutaion payload:', payload.slug);
+		console.log('from mutation payload:', payload.slug);
 		Object.assign(state.facts[payload.slug], payload.updates);
 		// let index = state.facts.findIndex(stateFact => stateFact.slug == fact.slug)
 		// Vue.set(state.facts, index, fact)
